@@ -45,7 +45,7 @@ function App() {
             const data = isLogin ? { email: formData.email, password: formData.password } : { fullName: formData.fullName, email: formData.email, phone: formData.phone, password: formData.password };
 
             try {
-                const response = await fetch(`http://localhost:5000${url}`, {
+                const response = await fetch(`https://b01025612-tutorial05.onrender.com${url}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
@@ -69,7 +69,7 @@ function App() {
     const fetchProducts = async () => {
         if (!token) return;
         try {
-            const response = await fetch('http://localhost:5000/api/products', {
+            const response = await fetch('https://b01025612-tutorial05.onrender.com/api/products', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             const result = await response.json();
